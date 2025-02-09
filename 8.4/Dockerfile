@@ -1,4 +1,4 @@
-FROM php:8.4-alpine
+FROM php:8.4-fpm-alpine
 
 WORKDIR /usr/share/nginx/html
 
@@ -16,3 +16,5 @@ RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.alpine.sh' 
 RUN apk add symfony-cli
 
 RUN apk cache clean
+
+CMD ["php-fpm"]
